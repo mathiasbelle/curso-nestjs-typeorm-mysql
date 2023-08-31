@@ -1,5 +1,4 @@
-import { IsEmail } from "class-validator";
-import { CreateUserDTO } from "src/user/dto/create-user.dto";
+import { IsEmail } from 'class-validator';
 
 export class AuthForgetDTO {
     @IsEmail()

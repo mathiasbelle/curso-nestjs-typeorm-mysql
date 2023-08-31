@@ -1,5 +1,12 @@
-import { IsString, IsEmail, IsStrongPassword, IsOptional, IsDateString, IsEnum } from "class-validator";
-import { Role } from "src/enums/role.enum";
+import {
+    IsString,
+    IsEmail,
+    IsStrongPassword,
+    IsOptional,
+    IsDateString,
+    IsEnum,
+} from 'class-validator';
+import { Role } from '../../enums/role.enum';
 
 export class CreateUserDTO {
     @IsString()
@@ -11,15 +18,15 @@ export class CreateUserDTO {
         minLowercase: 0,
         minNumbers: 0,
         minSymbols: 0,
-        minUppercase: 0
+        minUppercase: 0,
     })
     password: string;
 
     @IsOptional()
     @IsDateString()
-    birthAt: string;
+    birthAt?: string;
 
     @IsOptional()
     @IsEnum(Role)
-    role: number;
+    role?: number;
 }
